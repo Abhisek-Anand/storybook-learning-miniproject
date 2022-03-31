@@ -5,8 +5,9 @@ import './inputBox.css';
 /**
  * Primary UI component for user interaction
  */
-export const InputBox = ({ primary, backgroundColor, size, label, ...props }) => {
-  
+export const InputBox = ({ primary, ...props }) => {
+  const {backgroundColor, label, size, fieldValue, handleFieldChange} = props;
+
   return (
     <div className="inputTextBoxContainer">
     <label>{label}</label>
@@ -16,6 +17,8 @@ export const InputBox = ({ primary, backgroundColor, size, label, ...props }) =>
       className={`inputTextBox ${size}`}
       style={backgroundColor && { backgroundColor }}
       {...props}
+      value={fieldValue}
+      onChange={(value)=> handleFieldChange(value)}
     />
     </div>
   );

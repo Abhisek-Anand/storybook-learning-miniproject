@@ -11,17 +11,10 @@ export default {
   args: {
     label: 'Buttons'
   },
-  decorators: [
-    (Story) => (
-      <div style={{ margin: '1rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 
-const Template = (args) => <Button {...args} />;
+const Template = (args: JSX.IntrinsicAttributes & { [x: string]: any; primary: boolean; backgroundColor: any; size: string; label: string; }) => <Button {...args} />;
 
 export const PrimaryButton = Template.bind({});
 
